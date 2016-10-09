@@ -46,11 +46,7 @@ public class CharControl : MonoBehaviour {
 			jumpTimer = Time.time + 0.25f;
 			punching = true;
 		}
-
-		/*Debug.Log (maincam.transform.eulerAngles.x);
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			jumpTimer = Time.time + 1;
-		}*/
+			
 
 		if (Time.time > jumpTimer && punching == true) {
 			fistrb.velocity = Vector3.zero;
