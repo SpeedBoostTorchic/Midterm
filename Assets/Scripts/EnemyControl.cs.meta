@@ -1,10 +1,22 @@
 fileFormatVersion: 2
 guid: 966ac30bffdb6f945aeb92889ce1a959
-timeCreated: 1475558518
+timeCreated: 1476385053
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthBar: {instanceID: 0}
+  - nameDisplay: {instanceID: 0}
+  - fist: {instanceID: 0}
+  - fistrb: {instanceID: 0}
+  - punchEffect: {fileID: 1000010762987026, guid: 82a8ee489f4816f4d90e00a1c33c84e0,
+      type: 2}
+  - stabEffect: {fileID: 1000011961186198, guid: 49a6683b777421d49aac694934671294,
+      type: 2}
+  - player: {instanceID: 0}
+  - thisTransform: {instanceID: 0}
+  - thisRigidbody: {instanceID: 0}
+  - playerTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

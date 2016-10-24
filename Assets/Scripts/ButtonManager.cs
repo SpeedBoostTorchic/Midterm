@@ -5,11 +5,11 @@ using System.Collections;
 public class ButtonManager : MonoBehaviour {
 
 	//Options Menu prefab and children
-	public GameObject optionsMenu;
+	//public GameObject optionsMenu;
 	public GameObject cancel;
 	public GameObject accept;
-	public GameObject musicSlider;
-	public GameObject SFXSlider;
+	//public GameObject musicSlider;
+	//public GameObject SFXSlider;
 
 	public static float musicVolume;
 	public static float sfxVolume;
@@ -33,16 +33,17 @@ public class ButtonManager : MonoBehaviour {
 
 	//Sets menu defaults
 	public void Start(){
-		optionsMenu.SetActive (false);
-		music.volume = musicSlider.GetComponent<Slider> ().value;
-		sfx.volume = SFXSlider.GetComponent<Slider> ().value;
+		//optionsMenu.SetActive (false);
+		//music.volume = musicSlider.GetComponent<Slider> ().value;
+		//sfx.volume = SFXSlider.GetComponent<Slider> ().value;
 
 		music.Play ();
 		faderObject.SetActive (false);
+		Cursor.visible = true;
 	}
 
 	//Starts the game when start button is clicked
-	public void sceneTransition(){
+	public void sceneTransition(int x){
 		//Grabs screen fader object and component
 		faderObject.SetActive (true);
 		fade = faderObject.GetComponent<ScreenFader> ();
@@ -55,7 +56,7 @@ public class ButtonManager : MonoBehaviour {
 
 		//This causes the scene transition; see the
 		//"ScreenFader" class for more info
-		fade.FadeOut (1);
+		fade.FadeOut (x);
 	}
 
 	//Exits the applications when Quit button is clicked
@@ -64,7 +65,7 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	//Opens options menu and diables buttons
-	public void openOptions(){
+	/*public void openOptions(){
 		optionsMenu.SetActive (true);
 	}
 
@@ -83,6 +84,22 @@ public class ButtonManager : MonoBehaviour {
 	//Closes the options menu
 	public void closeOptions(){
 		optionsMenu.SetActive (false);
+	}*/
+
+	public void rollOver(){
+		sfx.clip = mouseOver;
+
+		if (!sfx.isPlaying)
+			sfx.Play ();
 	}
+
+	public void clickButton(){
+		sfx.clip = click;
+
+		if (!sfx.isPlaying)
+			sfx.Play ();
+
+	}
+
 
 }
